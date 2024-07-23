@@ -19,18 +19,8 @@ async function uploadFile() {
 	for (const idx of models) {
 		const data = csv.filter((entry) => entry.idx === idx);
 
-		const tr = document.createElement("tr");
-		let td = document.createElement("td");
-		td.innerText = idx.toString();
-		tr.appendChild(td);
-		td = document.createElement("td");
-		td.innerText = data[0].vendor;
-		tr.appendChild(td);
-		td = document.createElement("td");
-		td.innerText = data[0].model;
-		tr.appendChild(td);
-		tableElement.appendChild(tr);
-
+		const vendor = data[0].vendor;
+		const model = data[0].model;
 		traces.push({
 			x: data.map((entry) => entry.time),
 			y: data.map((entry) => entry.percentage),
@@ -43,7 +33,7 @@ async function uploadFile() {
 				}
 				return result;
 			}),
-			name: idx,
+			name: `${idx}: ${vendor} ${model}`,
 			type: "scatter",
 			hovertemplate:
 				"<b>%{yaxis.title.text}: %{y:.0%}</b><br>" +
