@@ -1,0 +1,9 @@
+[package]
+name = "battery-test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+battery = "0.7.8"
+tokio = { version = "1.38.1", features = ["rt-multi-thread", "time", "macros"] }
+sysinfo = "0.30.13"

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Battery-test</title>
+		<style>
+			body {
+				font-family: Consolas, monospace;
+			}
+			table {
+				border-collapse: collapse;
+				width: 100%;
+			}
+			th,
+			td {
+				border: 1px solid #ddd;
+				padding: 8px;
+				text-align: left;
+			}
+			th {
+				background-color: #f2f2f2;
+			}
+			tr:nth-child(even) {
+				background-color: #f2f2f2;
+			}
+			tr:hover {
+				background-color: #f1f1f1;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="./js/plotly-2.32.0.min.js"></script>
+		<script src="./js/script.js" defer></script>
+		<input type="file" id="file-input" accept=".csv" />
+		<table id="table">
+			<tr>
+				<th>Battery idx</th>
+				<th>Vendor</th>
+				<th>Model</th>
+			</tr>
+		</table>
+		<div>
+			<div id="chart"></div>
+		</div>
+	</body>
+</html>
